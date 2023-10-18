@@ -6,7 +6,7 @@ phases:
    # - aws cloudfront create-invalidation --distribution-id E2U0D5Y74SVP2G --paths "/*"
     - echo Logging in to Amazon ECR.... 
     - aws --version
-    - docker system prune -f 
+  #  - docker system prune -f 
     # update the following line with your own region
     - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNTID.dkr.ecr.$REGION.amazonaws.com
     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
